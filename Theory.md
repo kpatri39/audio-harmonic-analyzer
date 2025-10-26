@@ -129,9 +129,9 @@ This means the second half of the spectrum mirrors the first half, so we only co
 
 When we capture a finite chunk of audio, we're effectively multiplying the infinite signal by a rectangular window:
 
-$$x_{windowed}[n] = x[n] \cdot w_{rect}[n]$$
+$$x_{\text{windowed}}[n] = x[n] \cdot w_{\text{rect}}[n]$$
 
-where $w_{rect}[n] = 1$ for $0 \leq n < N$ and $0$ elsewhere.
+where $w_{\text{rect}}[n] = 1$ for $0 \leq n < N$ and $0$ elsewhere.
 
 **Multiplication in time domain = Convolution in frequency domain**
 
@@ -141,7 +141,7 @@ The rectangular window's frequency response is a **sinc function**, which has si
 
 The **Hann window** tapers the signal smoothly to zero at the edges:
 
-$$w_{Hann}[n] = 0.5 \left(1 - \cos\left(\frac{2\pi n}{N-1}\right)\right)$$
+$$w_{\text{Hann}}[n] = 0.5 \left(1 - \cos\left(\frac{2\pi n}{N-1}\right)\right)$$
 
 Properties:
 - Starts and ends at 0 (smooth edges)
@@ -194,7 +194,7 @@ $$\text{octave} = 4 + \left\lfloor \frac{n}{12} \right\rfloor$$
 
 The note within the octave:
 
-$$\text{note\_index} = (n + 9) \bmod 12$$
+$$\text{note index} = (n + 9) \bmod 12$$
 
 where the +9 offset accounts for A being at index 9 in the chromatic scale starting from C.
 
@@ -239,7 +239,7 @@ $$p'(x) = 2ax + b = 0$$
 
 Solving for the peak location:
 
-$$x_{peak} = -\frac{b}{2a}$$
+$$x_{\text{peak}} = -\frac{b}{2a}$$
 
 Using the three points to solve for $a$ and $b$:
 
@@ -249,7 +249,7 @@ $$b = \frac{\gamma - \alpha}{2}$$
 
 Therefore:
 
-$$\delta = x_{peak} = -\frac{b}{2a} = \frac{\alpha - \gamma}{2(\alpha - 2\beta + \gamma)}$$
+$$\delta = x_{\text{peak}} = -\frac{b}{2a} = \frac{\alpha - \gamma}{2(\alpha - 2\beta + \gamma)}$$
 
 This can be simplified to:
 
@@ -257,7 +257,7 @@ $$\delta = \frac{0.5(\alpha - \gamma)}{\alpha - 2\beta + \gamma}$$
 
 The interpolated frequency is:
 
-$$f_{true} = f_k + \delta \cdot \Delta f$$
+$$f_{\text{true}} = f_k + \delta \cdot \Delta f$$
 
 where $\Delta f$ is the frequency bin spacing.
 
@@ -319,7 +319,7 @@ The `scipy.signal.find_peaks` function implements sophisticated peak detection w
 
 **Prominence:** Measures how much a peak "stands out" from the surrounding baseline. Defined as the vertical distance between the peak and its lowest contour line.
 
-$$\text{prominence} = \text{peak\_height} - \min(\text{left\_baseline}, \text{right\_baseline})$$
+$$\text{prominence} = \text{peak height} - \min(\text{left baseline}, \text{right baseline})$$
 
 **Height:** Absolute magnitude threshold - peaks below this are ignored.
 
@@ -555,3 +555,5 @@ Each of these represents decades of ongoing research in digital signal processin
 4. Müller, M. (2015). *Fundamentals of Music Processing*. Springer.
 
 5. Rabiner, L. R., & Schafer, R. W. (2011). *Theory and Applications of Digital Speech Processing*. Pearson.
+
+---
