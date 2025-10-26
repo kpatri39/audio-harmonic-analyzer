@@ -555,9 +555,3 @@ Each of these represents decades of ongoing research in digital signal processin
 4. Müller, M. (2015). *Fundamentals of Music Processing*. Springer.
 
 5. Rabiner, L. R., & Schafer, R. W. (2011). *Theory and Applications of Digital Speech Processing*. Pearson.
-
----
-
-*Document written as part of the Real-Time FFT Audio Analyzer project*  
-*Author: Kartik Patri*  
-*Date: October 2025*
